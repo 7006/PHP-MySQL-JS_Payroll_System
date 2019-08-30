@@ -8,6 +8,12 @@
 	display: inline-block;
 	color:black;
 }
+.header.row{
+	justify-content:space-between;
+}
+.header divs{
+	align-self:flex-end;
+}
 
 #name:hover, #department:hover, #amount:hover, #salary:hover{
 	cursor: pointer;

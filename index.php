@@ -2,12 +2,9 @@
 <!-- use dark theme -->
 <!-- define sql constants -->
 <!-- make oop style -->
-<!-- add delete posibility -->
 <!-- add comments -->
 <!-- change method to post location.reload();-->
 <!-- success messages -->
-<!-- make table small -->
-<!-- add footer -->
 <?php 
 include('include/functions.php');
 
@@ -37,18 +34,23 @@ if (!empty($_GET)){
 	  <meta name="" content="">
 	  <link rel="stylesheet" href="css/style.css">
 	<link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<script  defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<!-- <script  defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script  defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script  defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script  defer type="text/javascript" src="scripts/main.js"></script>
 </head>
 <body>
 	<div class="container">
-			<div class="row">
-				<div class="header">
+			<div class="row header">
+				<div>
 					<a href="/"><h1>PAYROLL</h1></a>
-					<span>my Magzim</span>
+					<span>by Magzim</span>
 				</div>
+				<form class="form-inline my-2 my-lg-0">
+				      <input class="form-control mr-sm-2" type="search" placeholder="Name" aria-label="Search" id="search-name-inp">
+				      <button class="btn btn-outline-success my-2 my-sm-0" id="search-name-but">Search</button>
+			    </form>
 			</div>
 		<div class="row">
 			<table class="table table-sm" id="myTable">
@@ -69,7 +71,7 @@ if (!empty($_GET)){
 							<input hidden=""  name="id" value="<?= $row['id']?>" form="<?= $row['id'] ?>">
 						</th>
 						<td>
-							<input type="text" class="form-control" name="name" placeholder="" form="<?= $row['id'] ?>" value="<?= $row['name']?>" required>
+							<input type="text" class="form-control name" name="name" placeholder="" form="<?= $row['id'] ?>" value="<?= $row['name']?>" required>
 						</td>
 						<td>
 							<select class="form-control" name="department" form="<?= $row['id'] ?>">
@@ -96,7 +98,7 @@ if (!empty($_GET)){
 				    <?php endforeach ?>
 				</tbody>
 			</table>
-			<table class="table table-sm" id="myTable">
+			<table class="table table-sm">
 				<tbody>
 				    <tr class="table-info">
 						<th scope="row">New</th>

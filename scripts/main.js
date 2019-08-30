@@ -7,6 +7,27 @@ $("<span class='salary'>1500 $</span>").insertBefore($( ".salary" ).filter(funct
 
 
 
+$("#search-name-but").on('click',function(event){
+  event.preventDefault();
+  var searchStr = $('#search-name-inp').prop('value');
+  var rowsToSearch = $('#myTable tbody tr');
+  // console.log($('#myTable tbody tr'))
+  var occurance = rowsToSearch.filter((index, element) => { 
+    var nameToCheck = jQuery(element).find('.name').prop('value');
+    return nameToCheck.indexOf(searchStr) === 0;
+    // searchStr .indexOf  jQuery(element).find('.name').prop('value')
+    // console.log(nameToCheck)
+    // console.log(jQuery(element))
+    })
+  // console.log(occurance)
+  rowsToSearch.each((index, element)=> {
+    jQuery(element).fadeOut("slow")
+    // console.log(jQuery(element))
+  })
+  occurance.fadeIn('slow')
+
+})
+
 
 $("#name").on('click', sortByName.bind(null,0))
 $('#department').on('click', sortByName.bind(null,1))
