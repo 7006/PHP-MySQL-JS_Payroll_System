@@ -7,6 +7,7 @@
 <!-- change method to post location.reload();-->
 <!-- success messages -->
 <!-- make table small -->
+<!-- add footer -->
 <?php 
 include('include/functions.php');
 
@@ -45,7 +46,7 @@ if (!empty($_GET)){
 	<div class="container">
 			<div class="row">
 				<div class="header">
-					<h1>PAYROLL</h1>
+					<a href="/"><h1>PAYROLL</h1></a>
 					<span>my Magzim</span>
 				</div>
 			</div>
@@ -125,10 +126,14 @@ if (!empty($_GET)){
 		</div>
 		<br>
 		<comment>
-			 *salary can't be more than 1500$ --> js validation  
+			 *salary can't be more than 1500$ --> js validation.
+			 <br>
+			 *click on Table Header "Name" or "Department" or "Amount" or "Salary" to sort.
 		</comment>
 	</div>
-
+	<footer>
+		
+	</footer>
 
 	
 </body>

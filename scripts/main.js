@@ -1,12 +1,19 @@
 
 // editing salary higher than 1500 $ on fly
-$("<span>1500 $</span>").insertBefore($( ".salary" ).filter(function( index ) {
+$("<span class='salary'>1500 $</span>").insertBefore($( ".salary" ).filter(function( index ) {
 	// substracting " $" from a salary string and converting to integer
     return +$(this).text().substring(0, $(this).text().length-2) > 1500;
   }).addClass('too-high').attr("title","salary can't be higher than 1500"));
 
 
+
+
 $("#name").on('click', sortByName.bind(null,0))
+$('#department').on('click', sortByName.bind(null,1))
+$('#amount').on('click', sortByName.bind(null,2))
+$('.salary').each(function(index){ $(this).prop('value', $(this).text()) })
+$('#salary').on('click', sortByName.bind(null,3))
+
 // $("#salary").on('click', sortTable.bind(null,3))
 // source w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table_desc
 function sortByName(n) {
@@ -33,8 +40,6 @@ function sortByName(n) {
       /*check if the two rows should switch place,
       based on the direction, asc or desc:*/
       if (dir == "asc") {
-      	// console.log(x)
-      	// debugger
         if (x.value.toLowerCase() > y.value.toLowerCase()) {
           //if so, mark as a switch and break the loop:
           shouldSwitch= true;
