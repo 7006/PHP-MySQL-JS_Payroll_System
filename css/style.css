@@ -1,0 +1,14 @@
+.too-high{
+	text-decoration: line-through;
+	font-size: 12px;
+	color: grey;
+}
+
+.header h1{
+	display: inline-block;
+}
+
+#name:hover{
+	cursor: pointer;
+	padding-left: 5px;
+}
