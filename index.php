@@ -93,7 +93,11 @@ if (!empty($_GET)){
 
 				    </tr>
 				    <?php endforeach ?>
-				    <tr class="table-active">
+				</tbody>
+			</table>
+			<table class="table table-sm" id="myTable">
+				<tbody>
+				    <tr class="table-info">
 						<th scope="row">New</th>
 						<td>
 							<input type="text" class="form-control" name="name" placeholder="Worker's name" form="new" value="" required>
@@ -119,10 +123,14 @@ if (!empty($_GET)){
 				</tbody>
 			</table>
 		</div>
+		<br>
+		<comment>
+			 *salary can't be more than 1500$ --> js validation  
+		</comment>
 	</div>
 
 
-
+	
 </body>
 </html>
 
